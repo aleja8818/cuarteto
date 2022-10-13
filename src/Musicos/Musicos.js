@@ -61,6 +61,10 @@ export function Musicos(){
     //mapeando un arreglo para hacer render
 
     return(
+        <>
+        <h1 className="bg-light m-5 text-center" >INTEGRANTES</h1>
+
+
         <div className="row row-cols-1 row-cols-md-3 g-3 bg-dark">
             {
             musicos.map(function(musico){
@@ -68,7 +72,7 @@ export function Musicos(){
                     <>
                     <div className="col mt-3 mx-auto">
                         <div className="card h-100">
-                        <img src={musico.url} className="img-fluid w-100 h-100"></img>
+                        <img src={musico.url} className="img-fluid w-100 h-75"></img>
                         <h1 className="text-center">{musico.nombre}</h1>
                         <h2 className="text-center">{musico.rol}</h2>
                         </div>
@@ -81,6 +85,35 @@ export function Musicos(){
             })
             }
         </div>
+
+
+        <h1 className="bg-light m-5 text-center" >CONCIERTOS</h1>
+
+
+
+
+         <div className="row row-cols-1 row-cols-md-3 g-3 bg-dark mb-5">
+         {
+         conciertosMemorables.map(function(concierto){
+             return(
+                 <>
+                 <div className="col mt-3 mx-auto">
+                     <div className="card h-100">
+                     <img src={concierto.foto} className="img-fluid w-100 h-100 "></img>
+                     <h1 className="text-center">{concierto.pais}</h1>
+                     <h2 className="text-center">{concierto.fecha}</h2>
+                     <h5 className="text-center">{concierto.descripcion}</h5>
+                     </div>
+                    
+                 </div>
+
+                 </>
+                 
+             )
+         })
+         }
+     </div>
+     </>
     )
 
     
